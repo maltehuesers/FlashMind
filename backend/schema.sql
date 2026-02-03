@@ -11,7 +11,7 @@ CREATE TABLE sets (
 );
 
 CREATE TABLE cards (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,  
     set_id VARCHAR(50),
     question TEXT NOT NULL,
     answer TEXT NOT NULL,
