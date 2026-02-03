@@ -1,0 +1,9 @@
+{
+  "appId": "com.Malden.FlashMind",
+  "appName": "FlashMind",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "http"
+  }
+}

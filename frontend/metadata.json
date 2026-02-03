@@ -1,0 +1,5 @@
+{
+    "name": "FlashMind",
+    "description": "Eine professionelle Karteikarten-App mit Swipe-Gesten, Cloud-Synchronisierung und Offline-Modus.",
+    "requestFramePermissions": []
+}
