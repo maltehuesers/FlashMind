@@ -46,12 +46,26 @@ export const ApiService = {
      */
     fetchPublicSets: async (): Promise<CardSet[]> => {
         try {
-        const response = await fetch(`${API_URL}/sets`);
-        if (!response.ok) return [];
-        return await response.json();
+            const response = await fetch(`${API_URL}/sets`);
+            
+            // 1. Prüfen, ob die Antwort überhaupt okay ist (Status 200-299)
+            if (!response.ok) {
+                console.error(`Server antwortete mit Status: ${response.status}`);
+                return [];
+            }
+
+            // 2. Prüfen, ob es wirklich JSON ist
+            const contentType = response.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+                const text = await response.text();
+                console.error("Erhaltene Antwort ist kein JSON, sondern:", text.substring(0, 100));
+                return [];
+            }
+
+            return await response.json();
         } catch (error) {
-        console.error("API Error:", error);
-        return [];
+            console.error("Netzwerk- oder API-Fehler:", error);
+            return [];
         }
     },
 };

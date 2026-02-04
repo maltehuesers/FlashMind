@@ -1,7 +1,7 @@
 {
   "name": "flashmind-frontend",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@capacitor/android": "^8.0.2",
     "@capacitor/core": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.0",
     "framer-motion": "^12.31.0",
     "lucide-react": "^0.563.0",
     "react": "^18.3.1",

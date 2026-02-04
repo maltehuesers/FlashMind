@@ -8,6 +8,7 @@ import { CardSet, Card, View } from "./types";
 import Flashcard from "./components/FlashCard";
 import { Plus, Book, Globe, Settings, ArrowLeft, Trash2, Upload, Download, Shuffle, Save } from 'lucide-react';
 import { API_NAME } from "./config";
+import { StatusBar, Style } from '@capacitor/status-bar';
 
 const generateId = () => {
     return typeof crypto.randomUUID === 'function'
@@ -27,6 +28,17 @@ const App: React.FC = () => {
     // Initialer Ladevorgang
     useEffect(() => {
         setSets(StorageService.getSets());
+
+        // Systemleiste (StatusBar) verstecken
+        const hideStatusBar = async () => {
+            try {
+                await StatusBar.hide();
+            } catch (e) {
+                console.log("StatusBar hide nicht möglich (evtl. Browser-Modus)");
+            }
+        };
+
+        hideStatusBar();
     }, []);
 
     const handleStartStudy = (set: CardSet) => {
@@ -134,8 +146,8 @@ const App: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-slate-50 select-none safe-area-top">
-            <div className="min-h-screen flex flex-col w-full bg-white overflow-x-hidden relative">
+        <div className="h-screen w-full max-w-full overflow-hidden bg-slate-50 select-none safe-area-top">
+            <div className="h-full flex flex-col w-full bg-white relative">
                 {/* Header */}
                 <header className="safe-header flex items-center justify-between px-6 border-b border-slate-100 sticky top-0 bg-white z-50">
                     <div className="flex items-center space-x-2">
@@ -152,7 +164,7 @@ const App: React.FC = () => {
                 </header>
 
                 {/* Main Content */}
-                <main className="flex-1 w-full max-w-full overflow-y-auto overflow-x-hidden p-6">
+                <main className="flex-1 w-full max-w-full overflow-y-auto scrollbar-hide p-6">
                     {view === 'home' && (
                         <div className="space-y-6">
                             <div className="flex items-center justify-between">
@@ -365,7 +377,7 @@ const App: React.FC = () => {
                 </main>
 
                 {/* Navigation Bar */}
-                <nav className="h-20 w-full max-w-full bg-slate-50 border-t border-slate-100 flex items-center justify-around px-6 sticky bottom-0 z-50 overflow-x-hidden">
+                <nav className="h-20 w-full bg-slate-50 border-t border-slate-100 flex items-center justify-around px-6 shrink-0 z-50">
                     <button
                         onClick={() => setView('home')}
                         className={`flex flex-col items-center space-y-1 transition-colors ${view === 'home' ? 'text-indigo-600' : 'text-slate-400'}`}
