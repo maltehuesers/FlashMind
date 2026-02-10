@@ -1,6 +1,3 @@
-/**
- * Frontend: Typ-Definitionen
- */
 export interface Card {
     id: string;
     question: string;

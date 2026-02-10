@@ -1,39 +1,48 @@
-# 🗂️ FlashMind Project
+# 🧠 FlashMind – Die Fullstack Karteikarten-Plattform
 
-Willkommen beim **FlashMind** Projekt! Dies ist eine Fullstack-Anwendung zum Erstellen und Lernen von Flashcards. Das Projekt ist in zwei Hauptbereiche unterteilt: Mobile App (Frontend) und API-Service (Backend).
+FlashMind ist eine ganzheitliche Lernlösung, bestehend aus einer mobilen **Android-App** und einem leistungsstarken **REST-Backend**. Das Ziel ist es, Wissen effizient zu verwalten, offline zu lernen und Sets über die Cloud zu teilen.
 
-## 🏗️ Projektstruktur
+## 🏗 Projekt-Struktur
 
-Hier findest du die beiden Kernkomponenten des Systems. Klicke auf die Links, um zu den detaillierten Anleitungen und Setups zu gelangen:
+Das Repository ist in zwei Hauptbereiche unterteilt:
 
-### [📱 Frontend (Mobile App)](./frontend)
-Das Frontend ist eine hybride Mobile-App für Android.
-* **Tech:** React, TypeScript, Tailwind CSS, Capacitor.
-* **Features:** Lokales Lernen, Offline-Modus, Sets hoch- und herunterladen.
-* 👉 [**Zur Frontend-Anleitung**](./frontend/README.md)
+* **`frontend/`**: Die mobile App (React, TypeScript, Capacitor). [Zum Frontend-Guide](./frontend/README.md)
+* **`backend/`**: Die Server-Logik und Datenbankanbindung (Node.js, Express). [Zum Backend-Guide](./backend/README.md)
 
-### [⚙️ Backend (API Service)](./backend)
-Der Server, der die Synchronisation und Speicherung übernimmt.
-* **Tech:** Node.js, Express, MySQL.
-* **Features:** REST-API, Datenbank-Anbindung, Set-Management.
-* 👉 [**Zur Backend-Anleitung**](./backend/README.md)
+---
 
-## 🚀 Schnelleinstieg (Grobübersicht)
+## 🌟 Kern-Konzept
 
-Um das gesamte Projekt lokal zum Laufen zu bringen, folge diesen Schritten:
+FlashMind nutzt das Prinzip der **Spaced Repetition**. Während die App lokal auf dem Smartphone funktioniert (Offline-First), ermöglicht das Backend den Austausch von Lernsets innerhalb der Community.
 
-1. **Repository klonen:**
-   ```bash
-   git clone [https://github.com/maltehuesers/flashmind.git](https://github.com/maltehuesers/flashmind.git)
-   cd flashmind
-   ```
-2. Backend starten: Gehe in den /backend Ordner, installiere die Abhängigkeiten und konfiguriere die .env.
-3. Frontend starten: Gehe in den /frontend Ordner, installiere die Abhängigkeiten und verbinde die App mit der Backend-URL.
+---
 
-## 🛠️ Voraussetzungen
-* Node.js (v18 oder höher)
-* MySQL (lokal oder via Docker)
-* Android Studio (für das Mobile-Deployment)
+## 🛠 Gesamter Tech-Stack
+
+| Bereich | Technologien |
+| :--- | :--- |
+| **Mobile App** | React, Vite, Tailwind CSS, Framer Motion |
+| **Native Bridge** | Capacitor (für Android Deployment) |
+| **Server/API** | Node.js, Express, TypeScript |
+| **Datenbank** | SQL / LocalStorage (Hybrid-Ansatz) |
+
+---
+
+## 🚀 Schnellstart (Gesamtprojekt)
+
+1.  **Repository klonen:**
+    ```bash
+    git clone [https://github.com/maltehuesers/FlashMind.git](https://github.com/maltehuesers/FlashMind.git)
+    cd FlashMind
+    ```
+
+2.  **Backend starten:**
+    Folge den Anweisungen in `/backend/README.md`, um den Server und die Datenbank einzurichten.
+
+3.  **Frontend starten:**
+    Folge den Anweisungen in `/frontend/README.md`, um die App im Browser oder auf Android zu starten.
+
+---
 
 ## 📝 Lizenz
-Privates Lernprojekt – Malte Huesers
+Dieses Projekt wurde als **Lernprojekt** entwickelt, um die Integration von mobilen Frontends mit Cloud-Backends zu demonstrieren.

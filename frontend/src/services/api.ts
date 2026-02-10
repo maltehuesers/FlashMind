@@ -1,6 +1,3 @@
-    /**
-     * Frontend: Schnittstelle zum Backend (Datenbank)
-     */
 import { CardSet } from "../types";
 import { API_URL } from "../config";
 

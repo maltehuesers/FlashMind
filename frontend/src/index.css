@@ -1,1 +1,74 @@
 @import "tailwindcss";
+
+@layer base {
+    :root {
+        --safe-top: env(safe-area-inset-top, 0px);
+    }
+
+    html,
+    body,
+    #root {
+        @apply w-full max-w-full m-0 p-0 overflow-x-hidden;
+        overflow-x: clip;
+    }
+
+    body {
+        @apply bg-slate-50 antialiased;
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+}
+
+@layer components {
+    .safe-area-top {
+        padding-top: var(--safe-top);
+    }
+
+    .safe-header {
+        padding-top: var(--safe-top);
+        height: calc(4rem + var(--safe-top));
+    }
+
+    .card-container {
+        perspective: 1000px;
+        @apply w-full max-w-[320px] h-[380px];
+    }
+
+    .card-inner {
+        @apply relative w-full h-full transition-transform duration-500;
+        transform-style: preserve-3d;
+    }
+
+    .card-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-face {
+        @apply absolute w-full h-full backface-hidden flex items-center justify-center p-6 rounded-[30px] shadow-xl text-center text-2xl font-bold border border-slate-100;
+    }
+
+    .card-front {
+        @apply bg-white text-slate-800;
+    }
+
+    .card-back {
+        @apply bg-white text-indigo-600;
+        transform: rotateY(180deg);
+    }
+
+    /* Swipe Animationen */
+    .swipe-right {
+        @apply translate-x-[200%] rotate-[20deg] opacity-0 transition-all duration-500;
+    }
+
+    .swipe-left {
+        @apply -translate-x-[200%] -rotate-[20deg] opacity-0 transition-all duration-500;
+    }
+
+    .backface-hidden {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+}
