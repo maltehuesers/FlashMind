@@ -45,4 +45,4 @@ FlashMind nutzt das Prinzip der **Spaced Repetition**. Während die App lokal au
 ---
 
 ## 📝 Lizenz
-Dieses Projekt wurde als **Lernprojekt** entwickelt, um die Integration von mobilen Frontends mit Cloud-Backends zu demonstrieren.
+Dieses Projekt wurde als **Lernprojekt** entwickelt, um die Integration von mobilen Frontends mit Cloud-Backends zu lernen.
